@@ -50,7 +50,7 @@ def has_batchim(text: str) -> bool:
     """Return True when the last relevant Hangul syllable ends with a batchim."""
 
     jongseong = _jongseong_index(_last_relevant_char(text))
-    return bool(jongseong)
+    return jongseong is not None and jongseong != 0
 
 
 def pick_josa(text: str, pair: str | Iterable[str]) -> str:
