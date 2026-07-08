@@ -11,7 +11,7 @@ class JosaModelTests(unittest.TestCase):
         self.assertEqual(pick_josa("고양이", ("이", "가")), "가")
         self.assertEqual(pick_josa("책", ("이", "가")), "이")
 
-    def test_handles_rieul_exception_for_euro_ro(self) -> None:
+    def test_handles_rieul_exception_for_eullo_ro_pair(self) -> None:
         self.assertEqual(append_josa("길", "으로/로"), "길로")
         self.assertEqual(append_josa("집", "으로/로"), "집으로")
         self.assertEqual(append_josa("바다", "으로/로"), "바다로")
