@@ -20,7 +20,7 @@ _SUPPORTED_PAIRS = {
 def _normalize_pair(pair: str | Iterable[str]) -> tuple[str, str]:
     if isinstance(pair, str):
         if "/" not in pair:
-            raise ValueError("pair must include '/' between the two josa forms")
+            raise ValueError("pair string must include '/' between the two josa forms")
         first, second = (part.strip() for part in pair.split("/", 1))
     else:
         first, second = tuple(pair)
@@ -36,7 +36,7 @@ def _last_relevant_char(text: str) -> str:
     for character in reversed(text.strip()):
         if character.isalnum():
             return character
-    raise ValueError("text must contain at least one letter, number, or Hangul syllable")
+    raise ValueError("text must contain at least one alphanumeric character")
 
 
 def _jongseong_index(character: str) -> int | None:
