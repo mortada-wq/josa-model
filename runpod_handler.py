@@ -13,7 +13,11 @@ def handler(job: dict) -> dict:
     word = payload.get("word", "")
     pair = payload.get("pair", ["은", "는"])
 
-    result = model.predict(word, pair)
+    try:
+        result = model.predict(word, pair)
+    except ValueError as exc:
+        return {"error": str(exc)}
+
     return {
         "word": result.word,
         "selected_josa": result.selected_josa,

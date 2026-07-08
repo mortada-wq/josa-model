@@ -21,6 +21,14 @@ class TestJosaModel(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.model.predict("   ")
 
+    def test_invalid_pair_length(self) -> None:
+        with self.assertRaises(ValueError):
+            self.model.predict("집", ["은"])
+
+    def test_invalid_pair_values(self) -> None:
+        with self.assertRaises(ValueError):
+            self.model.predict("집", ["은", " "])
+
 
 if __name__ == "__main__":
     unittest.main()
