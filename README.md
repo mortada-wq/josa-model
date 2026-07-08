@@ -8,7 +8,7 @@ Josa selection model packaged as:
 ## Local run
 
 ```bash
-pip install -r /home/runner/work/josa-model/josa-model/requirements.txt
+pip install -r requirements.txt
 uvicorn api:app --host 0.0.0.0 --port 8000
 ```
 
@@ -56,14 +56,14 @@ Response:
 ### Build pod image (FastAPI)
 
 ```bash
-docker build -f /home/runner/work/josa-model/josa-model/Dockerfile -t <registry>/josa-model:latest /home/runner/work/josa-model/josa-model
+docker build -f Dockerfile -t <registry>/josa-model:latest .
 docker push <registry>/josa-model:latest
 ```
 
 ### Build RunPod serverless image
 
 ```bash
-docker build -f /home/runner/work/josa-model/josa-model/Dockerfile.serverless -t <registry>/josa-model:serverless /home/runner/work/josa-model/josa-model
+docker build -f Dockerfile.serverless -t <registry>/josa-model:serverless .
 docker push <registry>/josa-model:serverless
 ```
 

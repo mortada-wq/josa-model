@@ -23,7 +23,7 @@ class TestAPI(unittest.TestCase):
 
     def test_predict_invalid_request(self) -> None:
         response = self.client.post("/predict", json={"word": "", "pair": ["은", "는"]})
-        self.assertEqual(response.status_code, 422)
+        self.assertEqual(response.status_code, 400)
 
 
 if __name__ == "__main__":

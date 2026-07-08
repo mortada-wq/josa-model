@@ -7,7 +7,7 @@ from josa_model import JosaModel
 
 
 class PredictRequest(BaseModel):
-    word: str = Field(..., min_length=1, description="Input word")
+    word: str = Field(..., description="Input word")
     pair: list[str] = Field(default_factory=lambda: ["은", "는"], min_length=2, max_length=2)
 
 
