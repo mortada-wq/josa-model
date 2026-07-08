@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Iterable, Tuple
+from typing import Iterable
 
 _HANGUL_BASE = 0xAC00
 _HANGUL_LAST = 0xD7A3
@@ -17,7 +17,7 @@ _SUPPORTED_PAIRS = {
 }
 
 
-def _normalize_pair(pair: str | Iterable[str]) -> Tuple[str, str]:
+def _normalize_pair(pair: str | Iterable[str]) -> tuple[str, str]:
     if isinstance(pair, str):
         if "/" not in pair:
             raise ValueError("pair must include '/' between the two josa forms")

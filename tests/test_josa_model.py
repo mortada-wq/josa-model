@@ -1,7 +1,7 @@
 import unittest
 
 from josa import append_josa
-from josa_model import has_batchim, pick_josa, select_josa
+from josa_model import attach_josa, has_batchim, pick_josa, select_josa
 
 
 class JosaModelTests(unittest.TestCase):
@@ -15,6 +15,7 @@ class JosaModelTests(unittest.TestCase):
         self.assertEqual(append_josa("길", "으로/로"), "길로")
         self.assertEqual(append_josa("집", "으로/로"), "집으로")
         self.assertEqual(append_josa("바다", "으로/로"), "바다로")
+        self.assertEqual(attach_josa("길", "으로/로"), "길로")
 
     def test_ignores_trailing_whitespace_and_punctuation(self) -> None:
         self.assertEqual(pick_josa("달!", "은/는"), "은")
