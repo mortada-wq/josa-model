@@ -70,7 +70,7 @@ def pick_josa(text: str, pair: str | Iterable[str]) -> str:
 
 
 def select_josa(text: str, pair: str | Iterable[str]) -> str:
-    """Alias for :func:`pick_josa`."""
+    """Alias for pick_josa()."""
 
     return pick_josa(text, pair)
 
@@ -82,6 +82,6 @@ def append_josa(text: str, pair: str | Iterable[str]) -> str:
 
 
 def attach_josa(text: str, pair: str | Iterable[str]) -> str:
-    """Alias for :func:`append_josa`."""
+    """Alias for append_josa()."""
 
     return append_josa(text, pair)
