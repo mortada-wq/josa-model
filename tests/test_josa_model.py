@@ -5,7 +5,7 @@ from josa_model import attach_josa, has_batchim, pick_josa, select_josa
 
 
 class TestJosaModel(unittest.TestCase):
-    def test_selects_standard_pairs(self) -> None:
+    def test_select_standard_pairs(self) -> None:
         self.assertEqual(pick_josa("사과", "은/는"), "는")
         self.assertEqual(select_josa("집", "은/는"), "은")
         self.assertEqual(pick_josa("고양이", ("이", "가")), "가")

@@ -34,7 +34,7 @@ def _normalize_pair(pair: str | Iterable[str]) -> tuple[str, str]:
 
 def _last_relevant_char(text: str) -> str:
     for character in reversed(text.strip()):
-        if character.isalnum() or _HANGUL_BASE <= ord(character) <= _HANGUL_LAST:
+        if character.isalnum():
             return character
     raise ValueError("text must contain at least one letter, number, or Hangul syllable")
 
