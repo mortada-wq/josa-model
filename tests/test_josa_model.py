@@ -4,14 +4,14 @@ from josa import append_josa
 from josa_model import attach_josa, has_batchim, pick_josa, select_josa
 
 
-class JosaModelTests(unittest.TestCase):
+class TestJosaModel(unittest.TestCase):
     def test_selects_standard_pairs(self) -> None:
         self.assertEqual(pick_josa("사과", "은/는"), "는")
         self.assertEqual(select_josa("집", "은/는"), "은")
         self.assertEqual(pick_josa("고양이", ("이", "가")), "가")
         self.assertEqual(pick_josa("책", ("이", "가")), "이")
 
-    def test_handles_rieul_exception_for_eullo_ro_pair(self) -> None:
+    def test_handles_rieul_exception_for_ro_pair(self) -> None:
         self.assertEqual(append_josa("길", "으로/로"), "길로")
         self.assertEqual(append_josa("집", "으로/로"), "집으로")
         self.assertEqual(append_josa("바다", "으로/로"), "바다로")
